@@ -1,0 +1,425 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuentro de Educación: La información para la Gestión Institucional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .logo-container {
+            background: linear-gradient(to right, #1a3c8b, #2c5aa0);
+            padding: 20px 15px;
+            text-align: center;
+            color: white;
+        }
+        
+        .logo {
+            max-width: 180px;
+            height: auto;
+            margin: 0 auto 10px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .header {
+            padding: 25px 20px 15px;
+            text-align: center;
+            background-color: #f0f4fc;
+        }
+        
+        .header h1 {
+            color: #1a3c8b;
+            font-size: 24px;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        .header h2 {
+            color: #2c5aa0;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .invitacion-text {
+            background-color: #e8efff;
+            padding: 15px 20px;
+            font-size: 16px;
+            text-align: center;
+            border-left: 5px solid #2c5aa0;
+            margin: 0 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .details {
+            padding: 20px;
+        }
+        
+        .section-title {
+            color: #1a3c8b;
+            font-size: 18px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #e8efff;
+        }
+        
+        .temas-list {
+            list-style-type: none;
+            margin-bottom: 25px;
+        }
+        
+        .temas-list li {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background-color: #f8faff;
+            border-radius: 8px;
+            border-left: 4px solid #2c5aa0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .temas-list i {
+            color: #1a3c8b;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .fecha-hora {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .fecha, .hora {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f8faff;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .fecha h3, .hora h3 {
+            color: #1a3c8b;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .fecha p, .hora p {
+            font-size: 22px;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .enlace-container {
+            background-color: #f0f4fc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .enlace-container h3 {
+            color: #1a3c8b;
+            margin-bottom: 10px;
+        }
+        
+        .enlace-meet {
+            background-color: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: monospace;
+            word-break: break-all;
+            font-size: 14px;
+            border: 1px dashed #2c5aa0;
+            color: #1a3c8b;
+        }
+        
+        .botones-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .btn i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .btn-ingresar {
+            background-color: #1a73e8;
+            color: white;
+        }
+        
+        .btn-copiar {
+            background-color: #34a853;
+            color: white;
+        }
+        
+        .btn-compartir {
+            background-color: #5f6368;
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-ingresar:hover {
+            background-color: #0d62d9;
+        }
+        
+        .btn-copiar:hover {
+            background-color: #2e9445;
+        }
+        
+        .btn-compartir:hover {
+            background-color: #4a4d52;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+            background-color: #f8faff;
+        }
+        
+        .copiado-mensaje {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #34a853;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .copiado-mensaje.mostrar {
+            opacity: 1;
+        }
+        
+        @media (max-width: 500px) {
+            .header h1 {
+                font-size: 22px;
+            }
+            
+            .fecha-hora {
+                flex-direction: column;
+            }
+            
+            .fecha, .hora {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="https://i.postimg.cc/tCMZvQm4/Logo-Secretaria-de-Planeamiento-Para-Pag-WEB.png" alt="Logo Secretaría de Planeamiento Educativo">
+            </div>
+            <div class="logo-text">
+                Secretaría de Planeamiento Educativo<br>y Desarrollo Profesional Docente
+            </div>
+        </div>
+        
+        <div class="header">
+            <h1>Encuentro de Educación:<br>La información para la Gestión Institucional</h1>
+            <h2>Junto a la Intendencia de Morillo</h2>
+        </div>
+        
+        <div class="invitacion-text">
+            Invita la Secretaría de Planeamiento Educativo y Desarrollo Profesional Docente – Junto a la Intendencia de Morillo
+        </div>
+        
+        <div class="details">
+            <h3 class="section-title">Temas a tratar:</h3>
+            <ul class="temas-list">
+                <li><i class="fas fa-book-open"></i> Alfabetización Inicial</li>
+                <li><i class="fas fa-clipboard-check"></i> Departamento Evaluación (Aprender)</li>
+                <li><i class="fas fa-chart-line"></i> Sistema de Gestión (Sinede – Estadística)</li>
+                <li><i class="fas fa-school"></i> Escuelas de todos los niveles de Morillo</li>
+            </ul>
+            
+            <div class="fecha-hora">
+                <div class="fecha">
+                    <h3>Fecha</h3>
+                    <p>05/12/2025</p>
+                </div>
+                <div class="hora">
+                    <h3>Horario</h3>
+                    <p>09:00 a 12:00 hs</p>
+                </div>
+            </div>
+            
+            <div class="enlace-container">
+                <h3>Enlace para la reunión virtual:</h3>
+                <div class="enlace-meet">https://meet.google.com/rqf-fksd-gxs</div>
+                
+                <div class="botones-container">
+                    <button class="btn btn-ingresar" id="ingresarBtn">
+                        <i class="fas fa-video"></i> Ingresar a la Meet
+                    </button>
+                    
+                    <button class="btn btn-copiar" id="copiarBtn">
+                        <i class="far fa-copy"></i> Copiar enlace del Meet
+                    </button>
+                    
+                    <button class="btn btn-compartir" id="compartirBtn">
+                        <i class="fas fa-share-alt"></i> Compartir Meet
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Evento organizado por la Secretaría de Planeamiento Educativo y Desarrollo Profesional Docente</p>
+            <p>En colaboración con la Intendencia de Morillo</p>
+        </div>
+    </div>
+    
+    <div class="copiado-mensaje" id="mensajeCopiado">
+        ¡Enlace copiado al portapapeles!
+    </div>
+
+    <script>
+        // Botón para ingresar a la Meet
+        document.getElementById('ingresarBtn').addEventListener('click', function() {
+            window.open('https://meet.google.com/rqf-fksd-gxs', '_blank');
+        });
+        
+        // Botón para copiar el enlace
+        document.getElementById('copiarBtn').addEventListener('click', function() {
+            const enlace = 'https://meet.google.com/rqf-fksd-gxs';
+            
+            // Usar la API del portapapeles moderna
+            navigator.clipboard.writeText(enlace)
+                .then(() => {
+                    // Mostrar mensaje de confirmación
+                    const mensaje = document.getElementById('mensajeCopiado');
+                    mensaje.classList.add('mostrar');
+                    
+                    setTimeout(() => {
+                        mensaje.classList.remove('mostrar');
+                    }, 2000);
+                })
+                .catch(err => {
+                    // Fallback para navegadores más antiguos
+                    const textArea = document.createElement('textarea');
+                    textArea.value = enlace;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    
+                    // Mostrar mensaje de confirmación
+                    const mensaje = document.getElementById('mensajeCopiado');
+                    mensaje.classList.add('mostrar');
+                    
+                    setTimeout(() => {
+                        mensaje.classList.remove('mostrar');
+                    }, 2000);
+                });
+        });
+        
+        // Botón para compartir
+        document.getElementById('compartirBtn').addEventListener('click', function() {
+            const enlace = 'https://meet.google.com/rqf-fksd-gxs';
+            const titulo = 'Encuentro de Educación: La información para la Gestión Institucional';
+            const texto = 'Te invito a participar en el Encuentro de Educación: La información para la Gestión Institucional. Fecha: 05/12/2025 - Horario: 09:00 a 12:00 hs';
+            
+            // Verificar si el navegador soporta la API de Web Share
+            if (navigator.share) {
+                navigator.share({
+                    title: titulo,
+                    text: texto,
+                    url: enlace,
+                })
+                .catch(error => console.log('Error al compartir:', error));
+            } else {
+                // Fallback para navegadores que no soportan Web Share API
+                // Crear un enlace para WhatsApp
+                const textoWhatsApp = encodeURIComponent(`${titulo}\n${texto}\nEnlace: ${enlace}`);
+                const urlWhatsApp = `https://wa.me/?text=${textoWhatsApp}`;
+                
+                // Crear un enlace para email
+                const asuntoEmail = encodeURIComponent(titulo);
+                const cuerpoEmail = encodeURIComponent(`${texto}\n\nEnlace para unirse: ${enlace}`);
+                const urlEmail = `mailto:?subject=${asuntoEmail}&body=${cuerpoEmail}`;
+                
+                // Mostrar opciones de compartir
+                if (confirm('¿Deseas compartir a través de WhatsApp? (Cancelar para compartir por correo)')) {
+                    window.open(urlWhatsApp, '_blank');
+                } else {
+                    window.location.href = urlEmail;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
